@@ -5,7 +5,7 @@ Running this repository requires a correctly set-up DepthPro environment.
 In order to run the scripts:   
 1- Clone the repository [here](https://github.com/apple/ml-depth-pro) and create environment / install requirements as described there.  
 2- Change the environment name in .sh files (If you went with the suggested env name depth-pro, this step is not required) .  
-3- Put the files under src/ folder .     
+3- Put the files under the main project folder .     
 4- Run the respective script using:  
 ```bash
 bash nyu_test.sh
