@@ -8,7 +8,7 @@ In order to run the scripts:
 3- Put the files under src/ folder .     
 4- Run the respective script using:  
 ```bash
-nyu_test.sh
+bash nyu_test.sh
 ```  
 
 
