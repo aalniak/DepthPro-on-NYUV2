@@ -3,11 +3,13 @@ from datasets import load_dataset
 from sklearn.metrics import mean_squared_error
 import numpy as np
 import torch
-
 from depth_pro import create_model_and_transforms, load_rgb
+import os
+
+home_dir = os.environ["HOME"] # to save the nyu_cache
+print(home_dir)
 
 LOGGER = logging.getLogger(__name__)
-
 
 def get_torch_device() -> torch.device:
     """Get the Torch device."""
@@ -101,7 +103,7 @@ def main():
     precision=torch.half,   
     )
     model.eval()
-    dataset = load_dataset("sayakpaul/nyu_depth_v2", split="train[:40000]", cache_dir="/home/arda/nyu_cache") #First 40000 sample
+    dataset = load_dataset("sayakpaul/nyu_depth_v2", split="train[:40000]", cache_dir=home_dir+"/nyu_cache") #First 40000 sample
     #dataset = dataset.select(range(0, 40000, 40))  #Sample each 40th data
     process_dataset(dataset, model, transform)
             
