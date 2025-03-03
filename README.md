@@ -18,8 +18,8 @@ Once you run the script, it will try to download the dataset under /home/{your_u
 It is further possible to change the dataset sampling by:  
 
 ```python
-dataset = load_dataset("sayakpaul/nyu_depth_v2", split="train[:40000]", cache_dir=home_dir+"/nyu_cache") # Loads the dataset
-dataset = dataset.select(range(0, 40000, 40))  # Samples every 40th data
+dataset = load_dataset("sayakpaul/nyu_depth_v2", split="validation[:654]", cache_dir=home_dir+"/nyu_cache")
+dataset = dataset.select(range(0, 654, 6))  # Sample every 6th data in dataset
 ```
 
 
