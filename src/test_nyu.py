@@ -103,8 +103,8 @@ def main():
     precision=torch.half,   
     )
     model.eval()
-    dataset = load_dataset("sayakpaul/nyu_depth_v2", split="train[:40000]", cache_dir=home_dir+"/nyu_cache") #First 40000 sample
-    #dataset = dataset.select(range(0, 40000, 40))  #Sample each 40th data
+    dataset = load_dataset("sayakpaul/nyu_depth_v2", split="validation[:654]", cache_dir=home_dir+"/nyu_cache")
+    #dataset = dataset.select(range(0, 654, 6))  # Sample every 6th data in dataset
     process_dataset(dataset, model, transform)
             
 
